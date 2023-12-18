@@ -44,4 +44,7 @@ packagesYay=(
     "noto-fonts"
     "ranger"
     "rofi"
+    "libnotify"
+    "python-pillow"
+    "nwg-look"
 );

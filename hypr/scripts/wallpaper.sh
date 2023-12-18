@@ -20,18 +20,18 @@ case $1 in
 
     # Select wallpaper with rofi
     "select")
-        selected=$(ls -1 $HOME/dotfiles/wallpapers | grep "jpg" | rofi -dmenu -replace)
+        selected=$(ls -1 $HOME/wallpapers | grep "jpg" | rofi -dmenu -replace)
         if [ ! "$selected" ]; then
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i $HOME/dotfiles/wallpapers/$selected &
+        wal -q -i $HOME/wallpapers/$selected &
     ;;
 
     # Randomly select wallpaper 
     *)
-       selected=$(ls $HOME/dotfiles/wallpapers | grep "jpg" | shuf -n 1) 
-       wal -q -i $HOME/dotfiles/wallpapers/$selected &
+       selected=$(ls $HOME/wallpapers | grep "jpg" | shuf -n 1) 
+       wal -q -i $HOME/wallpapers/$selected &
     ;;
 
 esac
@@ -42,7 +42,7 @@ esac
 # ----------------------------------------------------- 
 #source "$HOME/.cache/wal/colors.sh"
 # echo "Wallpaper: $wallpaper"
-wallpaper=$"$HOME/dotfiles/wallpapers/${selected}"
+wallpaper=$"$HOME/wallpapers/${selected}"
 
 # ----------------------------------------------------- 
 # Copy selected wallpaper into .cache folder
