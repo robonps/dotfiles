@@ -39,4 +39,9 @@ packagesYay=(
     "swaylock-effects"
     "swayidle"
     "wlogout"
+    "nwg-look"
+    "nano"
+    "noto-fonts"
+    "ranger"
+    "rofi"
 );
