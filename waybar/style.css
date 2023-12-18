@@ -1,0 +1,278 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+ * by Stephan Raabe (2023) 
+ * ----------------------------------------------------- 
+*/
+
+/* -----------------------------------------------------
+ * Import Pywal colors 
+ * ----------------------------------------------------- */
+/* @import 'style-light.css'; */
+
+/* -----------------------------------------------------
+ * General 
+ * ----------------------------------------------------- */
+
+@import '../../.cache/wal/colors-waybar.css';
+@define-color selected #FFFFFF;
+* {
+    font-family: "JetBrainsMonoNLNerdFont", FontAwesome;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0.8);
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+
+#workspaces {
+    border-radius:  15px;
+    margin: 2px 1px 3px 1px;
+    padding: 0px 1px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 16px;
+    background: @background;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    border-radius: 15px;
+    color: @color11;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @selected;
+    border-radius: 15px;
+    font-weight: bold;
+    min-width: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    color: @foreground;
+    background: transparent;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 10px;
+    background-color: @background;
+    color: @selected;
+    opacity:0.95;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @backgroundlight;
+    margin: 3px 15px 3px 0px;
+    padding:0px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 3px solid @background;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+#custom-browser, 
+#custom-keybindings, 
+#custom-outlook, 
+#custom-filemanager, 
+#custom-teams, 
+#custom-chatgpt, 
+#custom-calculator, 
+#custom-windowsvm, 
+#custom-cliphist {
+    margin-right: 23px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @foreground;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules Left
+ * ----------------------------------------------------- */
+
+.modules-left {
+    border:0;
+    border-radius: 15px;
+    background: @background;
+    opacity: 0.8;
+}
+
+#custom-linuxboi,
+#window {
+    font-size: 16px;
+    border-radius: 15px;
+    color: @foreground;
+    padding: 0px 8px;
+    margin: 5px;
+}
+
+
+/* -----------------------------------------------------
+ * Custom Modules Right
+ * ----------------------------------------------------- */
+
+.modules-right {
+    border:0;
+    border-radius: 15px;
+    background: @background;
+    opacity: 0.8;
+}
+
+
+#custom-updates,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#disk,
+#memory,
+#cpu,
+#backlight,
+#custom-system {
+    font-size: 16px;
+    border-radius: 15px;
+    color: @foreground;
+    padding: 0px 8px;
+    margin: 5px;
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+
+#custom-updates.green {
+    background-color: @backgroundlight;
+}
+
+#custom-updates.yellow {
+    background-color: #ff9a3c;
+    color: #FFFFFF;
+}
+
+#custom-updates.red {
+    background-color: #dc2f2f;
+    color: #FFFFFF;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+#disk,#memory,#cpu,#language {
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    color:@iconcolor;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+#bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 15px;
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+    opacity:0.8;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+@keyframes blink {
+    to {
+        background: @background;
+        color: @foreground;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
+
+#tray {
+    background-color: #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+/* -----------------------------------------------------
+ * Other
+ * ----------------------------------------------------- */
+
+label:focus {
+    background-color: #000000;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
