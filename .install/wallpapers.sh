@@ -14,7 +14,7 @@ EOF
 echo -e "${NONE}"
 if [ ! -d ~/wallpaper ]; then
     echo "Do you want to download the wallpapers from repository https://gitlab.com/stephan-raabe/wallpaper/ ?"
-    echo "If not, the script will install 3 default wallpapers in ~/wallpaper/"
+    echo "If not, the script will temporarly set a wallpaper"
     echo ""
     if gum confirm "Do you want to download the repository?" ;then
         wget -P ~/Downloads/ https://gitlab.com/stephan-raabe/wallpaper/-/archive/main/wallpaper-main.zip
@@ -26,17 +26,9 @@ if [ ! -d ~/wallpaper ]; then
         echo "Wallpapers from the repository installed successfully."
     elif [ $? -eq 130 ]; then
         exit 130
-    else
-        if [ -d ~/wallpaper/ ]; then
-            echo "wallpaper folder already exists."
-        else
-            mkdir ~/wallpaper
-        fi
-        cp wallpapers/* ~/wallpaper
-        echo "Default wallpapers installed successfully."
     fi
 else
-    echo "~/wallpaper folder already exsits."
+    echo "~/wallpapers folder already exsits."
 fi
 echo ""
 

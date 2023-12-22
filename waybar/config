@@ -22,8 +22,7 @@
     // Modules Left
     "modules-left": [
         "custom/linuxboi",
-        "hyprland/window",
-        "tray"
+        "hyprland/window"
     ],
 
     // Modules Center

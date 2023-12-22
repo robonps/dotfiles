@@ -15,10 +15,6 @@ ____             _
 
 EOF
 echo -e "${NONE}"
-    if [ -d ~/dotfiles ]; then
-        echo "The script has detected an existing dotfiles folder and will try to create a backup into the folder:"
-        echo "~/dotfiles-versions/backups/$datets"
-    fi
     if [ ! -L ~/.bashrc ] && [ -f ~/.bashrc ]; then
         echo "The script has detected an existing .bashrc file and will try to create a backup to:" 
         echo "~/dotfiles-versions/backups/$datets/.bashrc-old"
@@ -35,10 +31,6 @@ echo -e "${NONE}"
         if [ ! -d ~/dotfiles-versions/backups/$datets ]; then
             mkdir ~/dotfiles-versions/backups/$datets
             echo "~/dotfiles-versions/backups/$datets created"
-        fi
-        if [ -d ~/dotfiles ]; then
-            rsync -a ~/dotfiles/ ~/dotfiles-versions/backups/$datets/
-            echo "Backup of your current dotfiles in ~/dotfiles-versions/backups/$datets created."
         fi
         if [ -f ~/.bashrc ]; then
             cp ~/.bashrc ~/dotfiles-versions/backups/$datets/.bashrc-old

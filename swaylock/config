@@ -8,7 +8,7 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-ignore-empty-password
+#ignore-empty-password
 font="JetBrainsMonoNLNerdFont"
 
 clock

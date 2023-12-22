@@ -62,7 +62,12 @@ $HOME/dotfiles/waybar/launch.sh
 # -----------------------------------------------------
 # Reload mako
 # -----------------------------------------------------
-$HOME/dotfiles/mako/scripts/update-theme.sh
+$HOME/dotfiles/scripts/update-theme-mako.sh
+
+# -----------------------------------------------------
+# Reload pywalfox
+# -----------------------------------------------------
+pywalfox update
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
