@@ -53,4 +53,5 @@ packagesYay=(
     "grim"
     "slurp"
     "librewolf"
+    "blueman"
 );

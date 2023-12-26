@@ -22,6 +22,7 @@
     // Modules Left
     "modules-left": [
         "custom/linuxboi",
+        "tray",
         "hyprland/window"
     ],
 
@@ -33,7 +34,7 @@
     // Modules Right    
     "modules-right": [
         "custom/updates",
-	"backlight",
+	    "backlight",
         "pulseaudio",
         "battery", 
         "network",

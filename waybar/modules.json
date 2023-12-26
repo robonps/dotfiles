@@ -47,18 +47,16 @@
     // Hyprland Window
     "hyprland/window": {
         "rewrite": {
-            "(.*) — LibreWolf": "$1"
+            "(.*) — LibreWolf": "$1",
+            "(.*) - VSCodium": "$1"
         },
         "separate-outputs": true
     },
 
-    // Arch Menu
-
-    "custom/linuxboi": {
-	"format": "",
-	"on-click": "wlogout",
-	"on-click-right": "kitty --hold neofetch",
-	"tooltip": false
+    // System tray
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
     },
 
     // Cliphist
@@ -83,28 +81,6 @@
         "tooltip": false
     },
     
-    // Wallpaper
-    "custom/wallpaper": {
-        "format": "",
-        "on-click":  "~/dotfiles/hypr/scripts/wallpaper.sh",
-        "on-click-right": "~/dotfiles/hypr/scripts/wallpaper.sh select",
-	"tooltip": false
-    },
-
-    // Waybar Themes
-    "custom/waybarthemes": {
-        "format": "",
-        "on-click": "~/dotfiles/waybar/themeswitcher.sh",
-        "tooltip": false
-    },
-    
-    // Settings
-    "custom/settings": {
-        "format": "",
-        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/settings/settings.sh",
-        "tooltip": false
-    },
-
     // Keybindings
     "custom/keybindings": {
         "format": "",
@@ -180,11 +156,6 @@
         }
     },
 
-    // System tray
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
 
     // Clock
     "clock": {
@@ -237,18 +208,35 @@
         ]
     },
     
+    
+    // Arch Menu
+    "custom/linuxboi": {
+        "format": "",
+        "on-click": "wlogout",
+        "on-click-right": "kitty --hold neofetch",
+        "tooltip": false
+    },
+
+    // Bluetooth
+    "bluetooth": {
+
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "tooltip-format-connected-battery": "{device_alias} ({device_battery_percentage}%)"
+    },
+
+
     // Group Settings
     "group/settings": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 300,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },        
         "modules": [
-            "custom/settings",
-            "custom/waybarthemes",
-            "custom/wallpaper"
+            "custom/linuxboi",
+            "bluetooth"
         ]
     },
 
@@ -315,14 +303,6 @@
             "default": ["", " ", " "]
         },
         "on-click": "pavucontrol"
-    },
-
-    // Bluetooth
-    "bluetooth": {
-        "format-disabled": "",
-        "format-off": "",
-        "interval": 30,
-        "on-click": "blueman-manager"
     },
 
     // Other
